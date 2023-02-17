@@ -39,10 +39,11 @@ spec:
             - name: TYK_ADMIN_EMAIL
               value: {{ .Values.dash.adminUser.email | quote }}
             - name: TYK_ADMIN_PASSWORD
+              # use password from secret instead of values.yaml
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-login-details
-                  key: TYK_PASS
+                  key: AdminSecret
+                  name: secrets-tyk
             - name: TYK_POD_NAMESPACE
               valueFrom:
                 fieldRef:
