@@ -85,18 +85,18 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-pro.fullname" . }} {{ end}}
-                key: APISecret
+                key: gateway-api-secret
 
           - name: TYK_DB_ADMINSECRET
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-pro.fullname" . }} {{ end}}
-                key: AdminSecret
+                key: dashboard-admin-api-secret
           - name: TYK_DB_NODESECRET
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-pro.fullname" . }} {{ end}}
-                key: APISecret
+                key: node-secret
           - name: TYK_DB_LICENSEKEY
             valueFrom:
               secretKeyRef:

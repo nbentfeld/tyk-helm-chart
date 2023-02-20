@@ -122,12 +122,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-pro.fullname" . }} {{ end}}
-                key: APISecret
+                key: gateway-api-secret
           - name: TYK_GW_NODESECRET
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-pro.fullname" . }} {{ end}}
-                key: APISecret
+                key: node-secret
         # Enable backward compatibility to chart 0.8.1.
         {{- if or .Values.gateway.sharding .Values.enableSharding}}
           - name: TYK_GW_DBAPPCONFOPTIONS_TAGS

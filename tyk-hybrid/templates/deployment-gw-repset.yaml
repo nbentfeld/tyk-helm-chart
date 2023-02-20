@@ -106,7 +106,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-hybrid.fullname" . }} {{ end}}
-                key: APISecret
+                key: gateway-api-secret
           - name: TYK_GW_SLAVEOPTIONS_CONNECTIONSTRING
             value: "{{ .Values.gateway.rpc.connString }}"
           - name: TYK_GW_SLAVEOPTIONS_USESSL

@@ -122,12 +122,12 @@ tests:
                 valueFrom:
                   secretKeyRef:
                     name: secrets-my-release-tyk-headless
-                    key: APISecret
+                    key: gateway-api-secret
               - name: TYK_GW_NODESECRET
                 valueFrom:
                   secretKeyRef:
                     name: secrets-my-release-tyk-headless
-                    key: APISecret
+                    key: node-secret
               - name: TYK_GW_HTTPSERVEROPTIONS_USESSL
                 value: "false"
             command: ["/opt/tyk-gateway/tyk", "--conf=/etc/tyk-gateway/tyk.conf"]
@@ -244,12 +244,12 @@ tests:
                 valueFrom:
                   secretKeyRef:
                     name: my-secret
-                    key: APISecret
+                    key: gateway-api-secret
               - name: TYK_GW_NODESECRET
                 valueFrom:
                   secretKeyRef:
                     name: my-secret
-                    key: APISecret
+                    key: node-secret
               - name: TYK_GW_HTTPSERVEROPTIONS_USESSL
                 value: "true"
             command: ["/opt/tyk-gateway/tyk", "--conf=/etc/tyk-gateway/tyk.conf"]

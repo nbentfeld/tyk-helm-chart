@@ -42,7 +42,7 @@ spec:
               # use password from secret instead of values.yaml
               valueFrom:
                 secretKeyRef:
-                  key: AdminSecret
+                  key: dashboard-admin-password
                   name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-headless.fullname" . }} {{ end }}
             - name: TYK_POD_NAMESPACE
               valueFrom:
@@ -62,7 +62,7 @@ spec:
             - name: TYK_ADMIN_SECRET
               valueFrom:
                 secretKeyRef:
-                  key: AdminSecret
+                  key: dashboard-admin-api-secret
                   name: {{ if .Values.secrets.useSecretName }} {{ .Values.secrets.useSecretName }} {{ else }} secrets-{{ include "tyk-headless.fullname" . }} {{ end }}
             - name: TYK_ORG_NAME
               value: {{ .Values.dash.org.name | quote }}
