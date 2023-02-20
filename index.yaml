@@ -2,7 +2,33 @@ apiVersion: v1
 entries:
   tyk-pro:
   - apiVersion: v1
-    created: "2023-02-17T17:31:20.615233859+01:00"
+    created: "2023-02-20T11:00:04.109271063+01:00"
+    description: This chart deploys full Tyk platform. Tyk Gateway is a fully open
+      source Enterprise API Gateway, supporting REST, GraphQL, TCP and gRPC protocols.
+      Tyk Gateway is provided ‘Batteries-included’, with no feature lockout. It enables
+      organisations and businesses around the world to protect, secure, and process
+      APIs and well as review and audit the consumed apis.
+    digest: 222e8c147a614e5b10f5fc2c4d79b3215fd546f3694422bf24ed929966298fdd
+    home: https://tyk.io/
+    icon: https://tyk.io/wp-content/uploads/2021/07/tyk_logo_no_bg.png
+    keywords:
+    - api gateway
+    - reverse proxy
+    - api management
+    - ingress
+    - ingress controller
+    - open source gateway
+    - edge gateway
+    name: tyk-pro
+    sources:
+    - https://github.com/TykTechnologies/tyk-helm-chart
+    - https://tyk.io/
+    - https://community.tyk.io/
+    urls:
+    - https://nbentfeld.github.io/tyk-helm-chart/tyk-pro-0.15.0.tgz
+    version: 0.15.0
+  - apiVersion: v1
+    created: "2023-02-20T11:00:04.105309371+01:00"
     description: This chart deploys full Tyk platform. Tyk Gateway is a fully open
       source Enterprise API Gateway, supporting REST, GraphQL, TCP and gRPC protocols.
       Tyk Gateway is provided ‘Batteries-included’, with no feature lockout. It enables
@@ -27,4 +53,4 @@ entries:
     urls:
     - https://nbentfeld.github.io/tyk-helm-chart/tyk-pro-0.14.0.tgz
     version: 0.14.0
-generated: "2023-02-17T17:31:20.610661501+01:00"
+generated: "2023-02-20T11:00:04.096288851+01:00"
