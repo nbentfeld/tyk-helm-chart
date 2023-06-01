@@ -1,3 +1,8 @@
+# Create new version:
+- Increase version in Chart.yaml
+- Package the new chart version: `helm package tyk-pro`
+- Add the new chart version to the index: `helm repo index . --merge index.yaml --url https://nbentfeld.github.io/tyk-helm-chart`
+
 # Tyk Helm Chart
 Tyk provides 3 different helm charts in this repo. Please visit the respective pages for each chart to learn how to install the chart and find out all the information relevant to that chart.  
 - [Tyk Pro](https://github.com/TykTechnologies/tyk-helm-chart/tree/master/tyk-pro)

@@ -20,6 +20,7 @@ spec:
         app: pump-{{ include "tyk-pro.fullname" . }}
         release: {{ .Release.Name }}
       annotations:
+        co.elastic.logs/enabled: "true"
         checksum/config: {{ include (print $.Template.BasePath "/configmap-pump.yaml") . | sha256sum }}
         checksum/secrets: {{ include (print $.Template.BasePath "/secrets.yaml") . | sha256sum }}
         {{- if .Values.pump.mounts }}
